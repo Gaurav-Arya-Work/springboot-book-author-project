@@ -33,7 +33,7 @@ public class AuthorController {
     }
 
     @GetMapping("/findBy")
-    public Book getAuthor(@RequestParam String name) {
+    public List<Book> getAuthor(@RequestParam String name) {
         Author a = authorService.getAuthor(name);
         int id = a.getAid();
         return bookService.getBook(id);

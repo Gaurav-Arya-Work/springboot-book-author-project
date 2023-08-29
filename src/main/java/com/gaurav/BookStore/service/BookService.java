@@ -1,6 +1,5 @@
 package com.gaurav.BookStore.service;
 
-import com.gaurav.BookStore.model.Author;
 import com.gaurav.BookStore.model.Book;
 import com.gaurav.BookStore.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class BookService {
         return bookRepository.findBooksByGenreAndCopiesAvailable(genre, copiesAvailable);
     }
 
-    public Book getBook(int id) {
+    public List<Book> getBook(int id) {
         return bookRepository.findByAuthorId(id);
     }
 }
