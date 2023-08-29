@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface AuthorRepository extends MongoRepository<Author, ObjectId> {
 
-        @Query("{'name': {$regex: ?0}}")
-        List<Author> findByAuthorNameRegex(String nameRegex);
+        List<Author> findByNameRegex(String nameRegex);
+
+        Author findByName(String name);
 }

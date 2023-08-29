@@ -23,7 +23,7 @@ public class Book {
 
     @NotNull(message = "You must specify authorId")
     @NotBlank
-    private String authorId;
+    private int authorId;
 
 
     @NotNull(message = "You must specify genre")
@@ -31,7 +31,7 @@ public class Book {
     private String genre;
 
     public Book() {}
-    public Book(int bid, int copiesAvailable, String authorId, String genre) {
+    public Book(int bid, int copiesAvailable, int authorId, String genre) {
         super();
         this.bid = bid;
         this.authorId = authorId;
@@ -54,11 +54,11 @@ public class Book {
         this.copiesAvailable = copiesAvailable;
     }
 
-    public String getAuthorId() {
+    public int getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(String authorId) {
+    public void setAuthorId(int authorId) {
         this.authorId = authorId;
     }
 

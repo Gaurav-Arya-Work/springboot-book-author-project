@@ -1,5 +1,6 @@
 package com.gaurav.BookStore.repository;
 
+import com.gaurav.BookStore.model.Author;
 import com.gaurav.BookStore.model.Book;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -18,4 +19,5 @@ public interface BookRepository extends MongoRepository<Book, ObjectId> {
     @Query(value = "{'genre': ?0, 'copiesAvailable': {$gt: ?1}}")
     List<Book> findBooksByGenreAndCopiesAvailable(String genre, int copiesAvailable);
 
+    Book findByAuthorId(int id);
 }

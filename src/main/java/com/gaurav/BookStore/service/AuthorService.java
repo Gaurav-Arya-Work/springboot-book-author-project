@@ -23,6 +23,10 @@ public class AuthorService {
     }
 
     public List<Author> getSelectedAuthor(String names) {
-        return authorRepository.findByAuthorNameRegex(names);
+        return authorRepository.findByNameRegex(names);
+    }
+
+    public Author getAuthor(String name){
+        return authorRepository.findByName(name);
     }
 }
