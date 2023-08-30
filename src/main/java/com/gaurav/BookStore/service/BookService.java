@@ -3,7 +3,6 @@ package com.gaurav.BookStore.service;
 import com.gaurav.BookStore.model.Book;
 import com.gaurav.BookStore.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +12,6 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
     public List<Book> getAllBooks(){
         return bookRepository.findAll();
     }
@@ -31,7 +28,7 @@ public class BookService {
         return bookRepository.findBooksByGenreAndCopiesAvailable(genre, copiesAvailable);
     }
 
-    public List<Book> getBook(int id) {
+    public List<Book> getBooks(int id) {
         return bookRepository.findByAuthorId(id);
     }
 }

@@ -36,7 +36,7 @@ public class AuthorController {
     public List<Book> getAuthor(@RequestParam String name) {
         Author a = authorService.getAuthor(name);
         int id = a.getAid();
-        return bookService.getBook(id);
+        return bookService.getBooks(id);
     }
 
     @PostMapping
